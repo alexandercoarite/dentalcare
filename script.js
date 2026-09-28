@@ -1,0 +1,6 @@
+function irCitas(){document.getElementById("citas").scrollIntoView({behavior:"smooth"})}
+function irServicios(){document.getElementById("servicios").scrollIntoView({behavior:"smooth"})}
+function seleccionarServicio(servicio){document.getElementById("servicio").value=servicio;irCitas()}
+const formulario=document.getElementById("formularioCita");
+formulario.addEventListener("submit",function(event){event.preventDefault();const nombre=document.getElementById("nombre").value;const servicio=document.getElementById("servicio").value;const fecha=document.getElementById("fecha").value;const hora=document.getElementById("hora").value;document.getElementById("mensajeCita").innerHTML="✅ Gracias <strong>"+nombre+"</strong>. Tu cita para <strong>"+servicio+"</strong> fue registrada para el "+fecha+" a las "+hora+".";formulario.reset()});
+function abrirWhatsApp(){const telefono="59100000000";const mensaje="Hola, quisiera solicitar información para reservar una cita dental.";window.open("https://wa.me/"+telefono+"?text="+encodeURIComponent(mensaje),"_blank")}
